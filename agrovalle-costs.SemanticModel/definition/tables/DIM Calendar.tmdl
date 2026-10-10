@@ -69,6 +69,7 @@ table 'DIM Calendar'
 		lineageTag: 68d9ab3c-4d8d-44ad-b537-36fc5a773b05
 		summarizeBy: none
 		sourceColumn: Mes
+		sortByColumn: #Mes
 
 		changedProperty = SortByColumn
 
