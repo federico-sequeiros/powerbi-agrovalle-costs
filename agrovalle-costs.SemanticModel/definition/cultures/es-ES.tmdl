@@ -2,8 +2,482 @@ cultureInfo es-ES
 
 	linguisticMetadata =
 			{
-			  "Version": "1.0.0",
-			  "Language": "en-US"
+			  "Version": "2.0.0",
+			  "Language": "en-US",
+			  "Entities": {
+			    "medidas_oc.prox__act": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Medidas OC",
+			          "ConceptualProperty": "Prox. Act"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Próxima Actualización": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "medidas_oc.count_oc": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Medidas OC",
+			          "ConceptualProperty": "Count OC"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Cantidad": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "medidas_oc.count_oc_reng": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Medidas OC",
+			          "ConceptualProperty": "Count OC_RENG"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Cantidad": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "dim_conceptos.desc_conce": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "DIM Conceptos",
+			          "ConceptualProperty": "DESC_CONCE"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Descripción": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "medidas_fac.sum_fac_c": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Medidas FAC",
+			          "ConceptualProperty": "SUM FAC C"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Importe Neto": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "medidas_fac.count_fac_c": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Medidas FAC",
+			          "ConceptualProperty": "Count FAC C"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Cantidad": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "medidas_fac.sum_fac": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Medidas FAC",
+			          "ConceptualProperty": "SUM FAC"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Importe Neto": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "medidas_fac.count_fac": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Medidas FAC",
+			          "ConceptualProperty": "Count FAC"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Cantidad": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "medidas_fac.sum_fac_t": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Medidas FAC",
+			          "ConceptualProperty": "SUM FAC T"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Importe Neto": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "medidas_fac.count_fac_t": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Medidas FAC",
+			          "ConceptualProperty": "Count FAC T"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Cantidad": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        },
+			        {
+			          "Totales": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "dim_base.descripcion": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "DIM Base",
+			          "ConceptualProperty": "DESCRIPCION"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Empresa": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "proveedores.nom_provee": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Proveedores",
+			          "ConceptualProperty": "NOM_PROVEE"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Proveedor": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "fac_facturas.n_comp": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "FAC Facturas",
+			          "ConceptualProperty": "N_COMP"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Factura": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "depositos.nombre_suc": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Depositos",
+			          "ConceptualProperty": "NOMBRE_SUC"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Destino": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "articulos.descripcio": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Articulos",
+			          "ConceptualProperty": "DESCRIPCIO"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Descripción": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "articulos_2.descripcio": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Articulos (2)",
+			          "ConceptualProperty": "DESCRIPCIO"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Artículo o Servicio": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "depositos_2.nombre_suc": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Depositos (2)",
+			          "ConceptualProperty": "NOMBRE_SUC"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Depósito": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "fac_ordenes_de_compra.n_oc_reng": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "FAC Ordenes de Compra",
+			          "ConceptualProperty": "N_OC_RENG"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Orden": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "fac_ordenes_de_compra.fec_emisio": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "FAC Ordenes de Compra",
+			          "ConceptualProperty": "FEC_EMISIO"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Fecha": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "fac_ordenes_de_compra.can_pedida": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "FAC Ordenes de Compra",
+			          "ConceptualProperty": "CAN_PEDIDA"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Cantidad": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "fac_ordenes_de_compra.precio": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "FAC Ordenes de Compra",
+			          "ConceptualProperty": "PRECIO"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Precio": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "fac_ordenes_de_compra.autorizo": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "FAC Ordenes de Compra",
+			          "ConceptualProperty": "AUTORIZO"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Autorizó": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    }
+			  }
 			}
 		contentType: json
 
