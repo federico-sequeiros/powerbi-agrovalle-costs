@@ -1,0 +1,247 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/report/3.3.0/schema.json",
+  "themeCollection": {
+    "baseTheme": {
+      "name": "CY23SU08",
+      "reportVersionAtImport": {
+        "visual": "1.8.84",
+        "report": "2.0.84",
+        "page": "1.3.84"
+      },
+      "type": "SharedResources"
+    },
+    "customTheme": {
+      "name": "Costos17328101926180128.json",
+      "reportVersionAtImport": {
+        "visual": "1.8.85",
+        "report": "2.0.85",
+        "page": "1.3.85"
+      },
+      "type": "RegisteredResources"
+    }
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "Filterb857ed2ccaccf93173c7",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Articulos"
+              }
+            },
+            "Property": "DESCRIPCIO"
+          }
+        },
+        "type": "Categorical",
+        "filter": {
+          "Version": 2,
+          "From": [
+            {
+              "Name": "a",
+              "Entity": "Articulos",
+              "Type": 0
+            }
+          ],
+          "Where": [
+            {
+              "Condition": {
+                "Not": {
+                  "Expression": {
+                    "In": {
+                      "Expressions": [
+                        {
+                          "Column": {
+                            "Expression": {
+                              "SourceRef": {
+                                "Source": "a"
+                              }
+                            },
+                            "Property": "DESCRIPCIO"
+                          }
+                        }
+                      ],
+                      "Values": [
+                        [
+                          {
+                            "Literal": {
+                              "Value": "'Percepciones'"
+                            }
+                          }
+                        ],
+                        [
+                          {
+                            "Literal": {
+                              "Value": "''"
+                            }
+                          }
+                        ]
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          ]
+        },
+        "howCreated": "User",
+        "isHiddenInViewMode": true,
+        "isLockedInViewMode": true,
+        "objects": {
+          "general": [
+            {
+              "properties": {
+                "isInvertedSelectionMode": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "true"
+                    }
+                  }
+                }
+              }
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "objects": {
+    "section": [
+      {
+        "properties": {
+          "verticalAlignment": {
+            "expr": {
+              "Literal": {
+                "Value": "'Top'"
+              }
+            }
+          }
+        }
+      }
+    ],
+    "outspacePane": [
+      {
+        "properties": {
+          "expanded": {
+            "expr": {
+              "Literal": {
+                "Value": "false"
+              }
+            }
+          },
+          "visible": {
+            "expr": {
+              "Literal": {
+                "Value": "true"
+              }
+            }
+          }
+        }
+      }
+    ]
+  },
+  "publicCustomVisuals": [
+    "PBI_CV_815282F9_27F5_4950_9430_E910E0A8DB6A",
+    "circleCard89937ABCC5E04C55BCD36C1FA960B10E",
+    "textFilter25A4896A83E0487089E2B90C9AE57C8A"
+  ],
+  "resourcePackages": [
+    {
+      "name": "SharedResources",
+      "type": "SharedResources",
+      "items": [
+        {
+          "name": "CY23SU08",
+          "path": "BaseThemes/CY23SU08.json",
+          "type": "BaseTheme"
+        }
+      ]
+    },
+    {
+      "name": "RegisteredResources",
+      "type": "RegisteredResources",
+      "items": [
+        {
+          "name": "Costos17328101926180128.json",
+          "path": "Costos17328101926180128.json",
+          "type": "CustomTheme"
+        },
+        {
+          "name": "fondo_Reporte_Costos_11449033960668631.png",
+          "path": "fondo_Reporte_Costos_11449033960668631.png",
+          "type": "Image"
+        },
+        {
+          "name": "fondo_Reporte_Costos_131939419535394586.png",
+          "path": "fondo_Reporte_Costos_131939419535394586.png",
+          "type": "Image"
+        },
+        {
+          "name": "fondo_Reporte_Costos_16431022477257322.png",
+          "path": "fondo_Reporte_Costos_16431022477257322.png",
+          "type": "Image"
+        },
+        {
+          "name": "fondo_Reporte_Costos_2027551419430101864.png",
+          "path": "fondo_Reporte_Costos_2027551419430101864.png",
+          "type": "Image"
+        },
+        {
+          "name": "fondo19022335832421167.jpg",
+          "path": "fondo19022335832421167.jpg",
+          "type": "Image"
+        },
+        {
+          "name": "fondo2891836207007443.jpg",
+          "path": "fondo2891836207007443.jpg",
+          "type": "Image"
+        },
+        {
+          "name": "fondo407737079148937.jpg",
+          "path": "fondo407737079148937.jpg",
+          "type": "Image"
+        },
+        {
+          "name": "fondo5244848280183747.jpg",
+          "path": "fondo5244848280183747.jpg",
+          "type": "Image"
+        },
+        {
+          "name": "fondo6487210905050662.jpg",
+          "path": "fondo6487210905050662.jpg",
+          "type": "Image"
+        },
+        {
+          "name": "Logo_Agrovalle_H34041873806349954.png",
+          "path": "Logo_Agrovalle_H34041873806349954.png",
+          "type": "Image"
+        },
+        {
+          "name": "Logo_Agrovalle_S34041873806349954.png",
+          "path": "Logo_Agrovalle_S34041873806349954.png",
+          "type": "Image"
+        }
+      ]
+    }
+  ],
+  "settings": {
+    "useStylableVisualContainerHeader": true,
+    "exportDataMode": "AllowSummarized",
+    "defaultFilterActionIsDataFilter": true,
+    "defaultDrillFilterOtherVisuals": true,
+    "allowChangeFilterTypes": true,
+    "useEnhancedTooltips": false,
+    "useDefaultAggregateDisplayName": true,
+    "queryLimitOption": "None",
+    "customMemoryLimit": "1048576",
+    "customTimeoutLimit": "225"
+  },
+  "slowDataSourceSettings": {
+    "isCrossHighlightingDisabled": false,
+    "isSlicerSelectionsButtonEnabled": false,
+    "isFilterSelectionsButtonEnabled": false,
+    "isFieldWellButtonEnabled": false,
+    "isApplyAllButtonEnabled": false
+  }
+}

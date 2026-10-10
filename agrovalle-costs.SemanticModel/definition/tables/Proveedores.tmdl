@@ -1,0 +1,41 @@
+table Proveedores
+	lineageTag: 6b6ff6ef-7c43-4b4c-82cf-fff00a5b0840
+
+	column COD_PROVEE
+		dataType: string
+		lineageTag: 7b697c99-3a3a-44e6-afa5-42ed07cf8cef
+		summarizeBy: none
+		sourceColumn: COD_PROVEE
+
+		annotation SummarizationSetBy = Automatic
+
+	column NOM_PROVEE
+		dataType: string
+		lineageTag: 53bc5209-5816-40c3-a204-6f9a4a512b37
+		summarizeBy: none
+		sourceColumn: NOM_PROVEE
+
+		annotation SummarizationSetBy = Automatic
+
+	column COD_PROVEE_BASE
+		dataType: string
+		lineageTag: 17abd413-0d83-4f21-9cbb-216fa0b6874d
+		summarizeBy: none
+		sourceColumn: COD_PROVEE_BASE
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Proveedores = m
+		mode: import
+		queryGroup: Compras
+		source =
+				let
+				    Origen = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText("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", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type nullable text) meta [Serialized.Text = true]) in type table [COD_PROVEE = _t, NOM_PROVEE = _t, COD_PROVEE_BASE = _t]),
+				    #"Tipo cambiado" = Table.TransformColumnTypes(Origen,{{"COD_PROVEE", type text}, {"NOM_PROVEE", type text}, {"COD_PROVEE_BASE", type text}}, "en-US")
+				in
+				    #"Tipo cambiado"
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navegación
+

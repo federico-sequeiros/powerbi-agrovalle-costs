@@ -1,0 +1,39 @@
+table 'Medidas OC'
+	lineageTag: 11cf3911-5706-45e6-9b78-57f8be9498c6
+
+	measure 'Count OC' = COUNT( 'FAC Ordenes de Compra'[N_ORDEN_CO] )
+		formatString: 0
+		lineageTag: 3b00b9de-cb71-43e5-91bb-59a7ad13539a
+
+	measure 'Count OC_RENG' = COUNT( 'FAC Ordenes de Compra'[N_OC_RENG] )
+		formatString: 0
+		lineageTag: 88d1627b-faab-48a7-a066-66dfb5bc8cf4
+
+	measure Importe =
+			CALCULATE(
+			SUMX( 'FAC Ordenes de Compra' , 'FAC Ordenes de Compra'[CAN_PEDIDA] * 'FAC Ordenes de Compra'[PRECIO] ),
+			USERELATIONSHIP( 'FAC Ordenes de Compra'[FEC_EMISIO] , 'DIM Calendar'[Fecha] )
+			)
+		formatString: \$#,0;(\$#,0);\$#,0
+		lineageTag: 240fe31d-0cb7-4606-8e7c-a8e89bba5aba
+
+	measure 'Prox. Act' = VALUES( FechaAct[Column1] ) + 7
+		formatString: dd/mm/yyyy
+		lineageTag: 2cd6d41c-a8a4-4920-b9d4-264ece9ee69e
+
+		annotation PBI_FormatHint = {"isDateTimeCustom":true}
+
+	partition 'Medidas OC' = m
+		mode: import
+		source =
+				let
+				    Origen = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText("i44FAA==", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type nullable text) meta [Serialized.Text = true]) in type table [Columna1 = _t]),
+				    #"Tipo cambiado" = Table.TransformColumnTypes(Origen,{{"Columna1", type text}}),
+				    #"Columnas quitadas" = Table.RemoveColumns(#"Tipo cambiado",{"Columna1"})
+				in
+				    #"Columnas quitadas"
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navegación
+

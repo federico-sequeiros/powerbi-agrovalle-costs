@@ -1,0 +1,32 @@
+table 'DIM Clasificacion'
+	lineageTag: 021ee0d7-ebdc-4e79-8044-6cc79e27d11a
+
+	column COD_CLASIF
+		dataType: string
+		lineageTag: 5ab2c08c-5c89-4e50-8739-40d2eacf292f
+		summarizeBy: none
+		sourceColumn: COD_CLASIF
+
+		annotation SummarizationSetBy = Automatic
+
+	column DESCRIP
+		dataType: string
+		lineageTag: 4b20cb11-4f70-47d3-a60d-3c8c51e9f482
+		summarizeBy: none
+		sourceColumn: DESCRIP
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'DIM Clasificacion' = m
+		mode: import
+		source =
+				let
+				    Origen = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText("NY7NCsIwEAZfpeTcQ+u/xyKCgnhQEaT0sE2WspA0skk8+PSuNL3OfMtO26qqVqU6jyE5H4pmYNLeQlBdKWoh6obvhCGKfBWN1hg8k89+Kf7gXZ9CpN5ipiuhd+QPaRkWD2RNwPQFM5+tZXDF5CDKs8w2wk7IDI5wjHPAVujRoo6SRQbMRHf/LRmGZEnDxPbCLqmXHYwxl9SVwCdMvd0P", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type nullable text) meta [Serialized.Text = true]) in type table [COD_CLASIF = _t, DESCRIP = _t]),
+				    #"Tipo cambiado" = Table.TransformColumnTypes(Origen,{{"COD_CLASIF", type text}, {"DESCRIP", type text}}, "en-US")
+				in
+				    #"Tipo cambiado"
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navegación
+

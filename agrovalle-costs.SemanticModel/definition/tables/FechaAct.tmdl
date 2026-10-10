@@ -1,0 +1,28 @@
+table FechaAct
+	lineageTag: fab241f2-c3aa-4e5c-9a54-8ba854d035a2
+
+	column Column1
+		dataType: dateTime
+		formatString: dd/mm/yyyy
+		lineageTag: 7659cfa0-e870-4243-b81e-e81fdac4ce58
+		summarizeBy: none
+		sourceColumn: Column1
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isDateTimeCustom":true}
+
+	partition FechaAct = m
+		mode: import
+		source =
+				let
+				    Origen = #datetime(2024, 1, 9, 8, 0, 0),
+				    #"Convertida en tabla" = #table(1, {{Origen}}),
+				    #"Tipo cambiado" = Table.TransformColumnTypes(#"Convertida en tabla",{{"Column1", type datetime}})
+				in
+				    #"Tipo cambiado"
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navegación
+

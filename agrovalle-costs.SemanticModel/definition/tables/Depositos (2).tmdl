@@ -1,0 +1,68 @@
+table 'Depositos (2)'
+	lineageTag: b5feb42a-a46b-4ea4-a9fd-e2950f25352e
+
+	column COD_SUCURS
+		dataType: string
+		lineageTag: 83742914-57f1-43d4-b0b0-d1f3067bdf18
+		summarizeBy: none
+		sourceColumn: COD_SUCURS
+
+		annotation SummarizationSetBy = Automatic
+
+	column NOMBRE_SUC
+		dataType: string
+		lineageTag: 99cc16de-33ff-40ad-a456-4fabbfb01e22
+		summarizeBy: none
+		sourceColumn: NOMBRE_SUC
+
+		annotation SummarizationSetBy = Automatic
+
+	column DIR_SUCURS
+		dataType: string
+		lineageTag: f733e20b-76a6-43d4-9fe9-22bf24114899
+		summarizeBy: none
+		sourceColumn: DIR_SUCURS
+
+		annotation SummarizationSetBy = Automatic
+
+	column INHABILITA
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 549420dd-c521-461e-ad3e-41ee3a80c770
+		summarizeBy: none
+		sourceColumn: INHABILITA
+
+		annotation SummarizationSetBy = Automatic
+
+	column ID_SUCURSAL
+		dataType: int64
+		formatString: 0
+		lineageTag: edd69bd5-c125-45ec-a454-21385de9dcd2
+		summarizeBy: none
+		sourceColumn: ID_SUCURSAL
+
+		annotation SummarizationSetBy = Automatic
+
+	column SUCURSAL_DESTINO
+		dataType: int64
+		formatString: 0
+		lineageTag: d0e6b99f-bd02-4a49-88b9-dc9e2d496c7a
+		summarizeBy: none
+		sourceColumn: SUCURSAL_DESTINO
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Depositos (2)' = m
+		mode: import
+		queryGroup: Stock
+		source =
+				let
+				    Origen = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText("fZRba8MgFID/ivR5gxyT9PJ4Zmwn8zY1fVjpw2AdDAaD7f/D1GRUaNzDabH181z8ktNpNTQNrO5WzHjOHnEwDj05cM2dYOjjH/b78vbxRdKe99fPn0v8hhznuwzTuBi4NV4EQ/ZCMyTauMCvKC1QmmNG27gIKCV3RKEOXAsluI7HsPjpUF6PaIsj2hzzEV2Z/QbrCqzLMWN9XCjdALknygSjxZHL3PuV7Qu2zzGz6zQtfMh1i5eCWNdGtEl9uqaN2WJ9LBhH8BDna2RBb2pT2saF2QsmNBIclNCx5KOQvLicbW08u7RnzH1awZ7IaK/QrjIcaKZy4d9y866l+UBq3U85/XgsiJpCkNpV2NB0G+iCkNJ4kn/9Q2sKQXtrnx9dQdbMgdQy16lDneACqVkD/TRNujRNqPkCSQsMeR4YjIrKJNEi0DSkcBVq+sBmStsupq1pA9uJ6hapmjAwC9MvUjVjaDbGTMYYm/ornv6aKBTKu7MyvgEKv2jNFpq6PKC0RpOBE64sPo/l22bBlfMv", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type nullable text) meta [Serialized.Text = true]) in type table [COD_SUCURS = _t, NOMBRE_SUC = _t, DIR_SUCURS = _t, INHABILITA = _t, ID_SUCURSAL = _t, SUCURSAL_DESTINO = _t]),
+				    #"Tipo cambiado" = Table.TransformColumnTypes(Origen,{{"COD_SUCURS", type text}, {"NOMBRE_SUC", type text}, {"DIR_SUCURS", type text}, {"INHABILITA", type logical}, {"ID_SUCURSAL", Int64.Type}, {"SUCURSAL_DESTINO", Int64.Type}}, "en-US")
+				in
+				    #"Tipo cambiado"
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navegación
+

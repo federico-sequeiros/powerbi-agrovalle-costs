@@ -1,0 +1,41 @@
+table 'DIM Conceptos'
+	lineageTag: 8379521f-1d2c-4a41-ac6a-c2deb0285d8a
+
+	column COD_CONCEP
+		dataType: string
+		lineageTag: 6067e274-0813-4bd8-b220-b1e4cc4c64a4
+		summarizeBy: none
+		sourceColumn: COD_CONCEP
+
+		annotation SummarizationSetBy = Automatic
+
+	column DESC_CONCE
+		dataType: string
+		lineageTag: dbe62159-58b2-4dc1-b88a-fe4b42f90966
+		summarizeBy: none
+		sourceColumn: DESC_CONCE
+
+		annotation SummarizationSetBy = Automatic
+
+	column COD_CONCEP_BASE
+		dataType: string
+		lineageTag: 379b0bae-5e09-4fc4-8005-9707e5b31522
+		summarizeBy: none
+		sourceColumn: COD_CONCEP_BASE
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'DIM Conceptos' = m
+		mode: import
+		queryGroup: Facturas
+		source =
+				let
+				    Origen = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText("ldNdT9swFAbgv2L1mlX1OTYfl9EGDAkmxBgSQly4qak8pTGzHS7262cnqYs0pTm+dd449nnzvLwsVqsVX5wsrpUP1rPLlt1r522rmriYnvHF60mfgrhwp9qgW7Nb3vnlya9gGh1fYTet73bWDy9AfgHjwle7W3c+mHVKPrPbbu1MnTYZ05jT4vP27MFu1Ga/pcghGRdudu+sYrfxsOPm7AuLp7dmPLHM6dO4cNlqtzVqeHSaH519+prRbbDsTv3pTKucUeNXz3L4/DCfa6fiTZbVZmda48NyiJ7n6EVc+Kndh6lNf8A2OBUON7nYB/kqLlR1rb11KXmvnGKPqmm065N8lZOpnXHCcYJX2sWxm7+HGfJcEYdh4u9xr2+aXbkuDBfnuRSO/QFrtdHOsvsmbqPYD+uCHoK5Dz70sZ8Jq7axONuM++VGuPxvkPHSPriujhNo90fMnfDUyVWjQ/87VLVyTo/D4bkdftYX96F8n7rcrVWjfu/3yr3w8/4u287td8g98IvhR+l039pzHK0fe+W5A0gdfLetdWrowNk37U3698dvQW4BUgsPRm9tOva2G+YAefSQRl/FN403Pg3/Vq3jviG1O0RzBZAqqJo42Vh2ih6mPCRzB5A6eDJbE2uq90/z6CGN/lE3+s22saDEMGjX6jDkDgyO8oZS3lDEGyi8oYg3TPOGEt5A5w1U3kDmDXTeMM8bqLyBxhsKeQOFN9B4wzRvoPCGAt4wwxvovIHMG47yBiJvIPHGUt5YxBspvLGIN07zxhLeSOeNVN5I5o103jjPG6m8kcYbC3kjhTfSeOM0b6TwxgLeOMMb6byRzBuP8kYibyTxFqW8RRFvQeEtiniLad6ihLeg8xZU3oLMW9B5i3negspb0HiLQt6CwlvQeItp3oLCWxTwFjO8BZ23IPMWR3kLIm9B4i1Lecsi3pLCWxbxltO8ZQlvSectqbwlmbek85bzvCWVt6TxloW8JYW3pPGW07wlhbcs4C1neEs6b0nmLY/ylkTeMff6Dw==", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type nullable text) meta [Serialized.Text = true]) in type table [COD_CONCEP = _t, DESC_CONCE = _t, COD_CONCEP_BASE = _t]),
+				    #"Tipo cambiado" = Table.TransformColumnTypes(Origen,{{"COD_CONCEP", type text}, {"DESC_CONCE", type text}, {"COD_CONCEP_BASE", type text}}, "en-US")
+				in
+				    #"Tipo cambiado"
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navegación
+

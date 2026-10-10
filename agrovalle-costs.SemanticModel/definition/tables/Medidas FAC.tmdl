@@ -1,0 +1,85 @@
+table 'Medidas FAC'
+	lineageTag: 7b1e40df-ca4c-46b7-91e0-52a496f32571
+
+	measure 'Count FAC C' =
+			CALCULATE( COUNTROWS( 'FAC Facturas'),
+			'DIM Tipo de Factura'[TIPO] = 2
+			)
+		formatString: #,0
+		lineageTag: a93c9070-3ba5-4f12-b396-993e0c678875
+
+	measure 'Count FAC' =
+			
+			CALCULATE(
+			COUNTROWS( 'FAC Facturas'),
+			'FAC Facturas'[TIPO] = 1
+			)
+		formatString: 0
+		lineageTag: afd77bf8-825a-49c8-9f11-38f63af1dd80
+
+	measure 'Count FAC T' =
+			
+			COUNTROWS( 'FAC Facturas')
+		formatString: #,0
+		lineageTag: 8fc46edd-7645-4790-a4e5-249d08c0a9e3
+
+	measure 'SUM FAC' = ```
+			
+			VAR v1 = CALCULATE( 
+			    SUM( 'FAC Facturas'[IMPORTE_NE] ),
+			    'FAC Facturas'[TIPO] = 1,
+			    OR(
+			    'FAC Facturas'[T_COMP] = "FAC",
+			    'FAC Facturas'[T_COMP] = "N/D"
+			    )
+			    )
+			VAR v2 = CALCULATE( 
+			    SUM( 'FAC Facturas'[IMPORTE_NE] ),
+			    'FAC Facturas'[TIPO] = 1,
+			    'FAC Facturas'[T_COMP] = "N/C"
+			    )
+			RETURN
+			    v1 - v2
+			```
+		formatString: \$#,0;(\$#,0);\$#,0
+		lineageTag: 567008eb-ff2b-43c6-b341-e14306160275
+
+	measure 'SUM FAC C' = ```
+			
+			VAR v1 = CALCULATE( 
+			    SUM( 'FAC Facturas'[IMPORTE_NE] ),
+			    'FAC Facturas'[TIPO] = 2,
+			    OR(
+			    'FAC Facturas'[T_COMP] = "FAC",
+			    'FAC Facturas'[T_COMP] = "N/D"
+			    )
+			    )
+			VAR v2 = CALCULATE( 
+			    SUM( 'FAC Facturas'[IMPORTE_NE] ),
+			    'FAC Facturas'[TIPO] = 2,
+			    'FAC Facturas'[T_COMP] = "N/C"
+			    )
+			RETURN
+			    v1 - v2
+			```
+		formatString: \$#,0;(\$#,0);\$#,0
+		lineageTag: 1a5a7d07-14e4-488f-a30f-54f96220e63e
+
+	measure 'SUM FAC T' = [SUM FAC] + [SUM FAC C]
+		formatString: \$#,0;(\$#,0);\$#,0
+		lineageTag: 937baf59-8ed6-4f22-920a-cb3b85909bd2
+
+	partition 'Medidas FAC-430628c8-795b-4904-b770-8c5499093258' = m
+		mode: import
+		source =
+				let
+				    Origen = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText("i44FAA==", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type nullable text) meta [Serialized.Text = true]) in type table [Columna1 = _t]),
+				    #"Tipo cambiado" = Table.TransformColumnTypes(Origen,{{"Columna1", type text}}),
+				    #"Columnas quitadas" = Table.RemoveColumns(#"Tipo cambiado",{"Columna1"})
+				in
+				    #"Columnas quitadas"
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navegación
+

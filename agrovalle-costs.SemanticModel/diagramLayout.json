@@ -1,0 +1,476 @@
+{
+  "version": "1.1.0",
+  "diagrams": [
+    {
+      "ordinal": 0,
+      "scrollPosition": {
+        "x": 150,
+        "y": 0
+      },
+      "nodes": [
+        {
+          "location": {
+            "x": 2805.3242090555532,
+            "y": 518.23727930769326
+          },
+          "nodeIndex": "FechaAct",
+          "nodeLineageTag": "fab241f2-c3aa-4e5c-9a54-8ba854d035a2",
+          "size": {
+            "height": 104,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 1675.9038935592798,
+            "y": 618.21130254840341
+          },
+          "nodeIndex": "Enlace SC OC Factura",
+          "nodeLineageTag": "d1f14ee8-e704-44f6-82db-51432daa34b3",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 1079.0522946101637,
+            "y": 830.47455861538651
+          },
+          "nodeIndex": "FAC Ordenes de Compra",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 1366.0341452477469,
+            "y": 621.16035808279526
+          },
+          "nodeIndex": "Articulos",
+          "nodeLineageTag": "071c9ea5-d031-40d2-9d53-9bbff5024b74",
+          "size": {
+            "height": 296,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 1052.466312062485,
+            "y": 310.26609963972408
+          },
+          "nodeIndex": "Depositos",
+          "nodeLineageTag": "7735ef42-a244-4d56-aca3-3e48e71e458f",
+          "size": {
+            "height": 224,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 3941.3242090555532,
+            "y": 470.23727930769326
+          },
+          "nodeIndex": "Medida",
+          "nodeLineageTag": "b2a769cf-f894-4e46-9f16-911c4c46db29",
+          "size": {
+            "height": 200,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 10,
+            "y": 618.93778755139829
+          },
+          "nodeIndex": "Sucursales",
+          "nodeLineageTag": "f70ac1a0-a299-4096-b64c-a6df328aa5c8",
+          "size": {
+            "height": 272,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 6567.5099233412675,
+            "y": 458.23727930769326
+          },
+          "nodeIndex": "Depositos (2)",
+          "nodeLineageTag": "b5feb42a-a46b-4ea4-a9fd-e2950f25352e",
+          "size": {
+            "height": 224,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 6851.5099233412675,
+            "y": 470.23727930769326
+          },
+          "nodeIndex": "Medida (2)",
+          "nodeLineageTag": "e855569d-1fdf-47f9-a08a-6736c10f94fc",
+          "size": {
+            "height": 200,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 7135.5099233412675,
+            "y": 434.23727930769326
+          },
+          "nodeIndex": "Sucursales (2)",
+          "nodeLineageTag": "40efee28-8fe4-4c59-bdb7-b28be6eeab2e",
+          "size": {
+            "height": 272,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 5725.5099233412675,
+            "y": 492.52299359340753
+          },
+          "nodeIndex": "Medidas FAC",
+          "size": {
+            "height": 165.42857142857142,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 7419.5099233412675,
+            "y": 518.23727930769326
+          },
+          "nodeIndex": "Medidas OC",
+          "size": {
+            "height": 104,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {},
+          "nodeIndex": "DIM Clasificacion",
+          "nodeLineageTag": "021ee0d7-ebdc-4e79-8044-6cc79e27d11a",
+          "size": {
+            "height": 128,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {},
+          "nodeIndex": "Articulos (2)",
+          "nodeLineageTag": "3a8a1842-0df3-4a8c-9035-efd53a1d5f64",
+          "size": {
+            "height": 296,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {},
+          "nodeIndex": "DIM Conceptos",
+          "nodeLineageTag": "8379521f-1d2c-4a41-ac6a-c2deb0285d8a",
+          "size": {
+            "height": 152,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {},
+          "nodeIndex": "DIM Tipo de Factura",
+          "nodeLineageTag": "a2148186-1e56-42ba-b9b7-9057870970c3",
+          "size": {
+            "height": 128,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {},
+          "nodeIndex": "FAC Facturas",
+          "nodeLineageTag": "87605b9c-6020-4422-858e-5a40f219eade",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {},
+          "nodeIndex": "DIM Base",
+          "nodeLineageTag": "6613427c-2188-4fe0-8011-5b27daa49266",
+          "size": {
+            "height": 128,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {},
+          "nodeIndex": "Proveedores",
+          "nodeLineageTag": "6b6ff6ef-7c43-4b4c-82cf-fff00a5b0840",
+          "size": {
+            "height": 152,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {},
+          "nodeIndex": "DIM Calendar",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        }
+      ],
+      "name": "Todas las tablas",
+      "zoomValue": 60,
+      "pinKeyFieldsToTop": false,
+      "showExtraHeaderInfo": false,
+      "hideKeyFieldsWhenCollapsed": false,
+      "tablesLocked": false
+    },
+    {
+      "ordinal": 1,
+      "scrollPosition": {
+        "x": 0,
+        "y": 0
+      },
+      "nodes": [
+        {
+          "location": {
+            "x": 316.57142857142867,
+            "y": 336.42857142857139
+          },
+          "nodeIndex": "FAC Ordenes de Compra",
+          "nodeLineageTag": "33f7bc77-6845-4338-a681-775ec0b1f3b0",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 9
+        },
+        {
+          "location": {
+            "x": 920.857142857143,
+            "y": 752.142857142857
+          },
+          "nodeIndex": "Articulos",
+          "nodeLineageTag": "071c9ea5-d031-40d2-9d53-9bbff5024b74",
+          "size": {
+            "height": 296,
+            "width": 234
+          },
+          "zIndex": 1
+        },
+        {
+          "location": {
+            "x": 662.28571428571433,
+            "y": 315.00000000000011
+          },
+          "nodeIndex": "Enlace SC OC Factura",
+          "nodeLineageTag": "d1f14ee8-e704-44f6-82db-51432daa34b3",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 10
+        },
+        {
+          "location": {
+            "x": 1262.2857142857144,
+            "y": 0
+          },
+          "nodeIndex": "Depositos",
+          "nodeLineageTag": "7735ef42-a244-4d56-aca3-3e48e71e458f",
+          "size": {
+            "height": 224,
+            "width": 234
+          },
+          "zIndex": 3
+        },
+        {
+          "location": {
+            "x": 856.57142857142856,
+            "y": 0
+          },
+          "nodeIndex": "Medida",
+          "nodeLineageTag": "b2a769cf-f894-4e46-9f16-911c4c46db29",
+          "size": {
+            "height": 200,
+            "width": 234
+          },
+          "zIndex": 6
+        },
+        {
+          "location": {
+            "x": 1565.4107142857142,
+            "y": 0
+          },
+          "nodeIndex": "Sucursales",
+          "nodeLineageTag": "f70ac1a0-a299-4096-b64c-a6df328aa5c8",
+          "size": {
+            "height": 272,
+            "width": 234
+          },
+          "zIndex": 7
+        },
+        {
+          "location": {
+            "x": 473.71428571428572,
+            "y": 30.71428571428573
+          },
+          "nodeIndex": "Depositos (2)",
+          "nodeLineageTag": "b5feb42a-a46b-4ea4-a9fd-e2950f25352e",
+          "size": {
+            "height": 224,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": -40.571428571428555,
+            "y": 766.42857142857144
+          },
+          "nodeIndex": "Sucursales (2)",
+          "nodeLineageTag": "40efee28-8fe4-4c59-bdb7-b28be6eeab2e",
+          "size": {
+            "height": 272,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 70.85714285714289,
+            "y": 10.714285714285722
+          },
+          "nodeIndex": "Medida (2)",
+          "nodeLineageTag": "e855569d-1fdf-47f9-a08a-6736c10f94fc",
+          "size": {
+            "height": 200,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 0,
+            "y": 430.71428571428572
+          },
+          "nodeIndex": "DIM Clasificacion",
+          "nodeLineageTag": "021ee0d7-ebdc-4e79-8044-6cc79e27d11a",
+          "size": {
+            "height": 128,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 0,
+            "y": 580.71428571428578
+          },
+          "nodeIndex": "Articulos (2)",
+          "nodeLineageTag": "3a8a1842-0df3-4a8c-9035-efd53a1d5f64",
+          "size": {
+            "height": 165.99999999999989,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 1066.5714285714284,
+            "y": 315.00000000000006
+          },
+          "nodeIndex": "FAC Facturas",
+          "nodeLineageTag": "87605b9c-6020-4422-858e-5a40f219eade",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 1658.0000000000002,
+            "y": 662.14285714285722
+          },
+          "nodeIndex": "DIM Tipo de Factura",
+          "nodeLineageTag": "a2148186-1e56-42ba-b9b7-9057870970c3",
+          "size": {
+            "height": 128,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 1165.1428571428571,
+            "y": 733.57142857142856
+          },
+          "nodeIndex": "DIM Base",
+          "nodeLineageTag": "6613427c-2188-4fe0-8011-5b27daa49266",
+          "size": {
+            "height": 128,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 1636.5714285714287,
+            "y": 382.14285714285717
+          },
+          "nodeIndex": "Proveedores",
+          "nodeLineageTag": "6b6ff6ef-7c43-4b4c-82cf-fff00a5b0840",
+          "size": {
+            "height": 152,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 652.28571428571422,
+            "y": 737.85714285714278
+          },
+          "nodeIndex": "DIM Calendar",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        }
+      ],
+      "name": "Modelo",
+      "zoomValue": 70,
+      "pinKeyFieldsToTop": false,
+      "showExtraHeaderInfo": false,
+      "hideKeyFieldsWhenCollapsed": false,
+      "tablesLocked": false
+    }
+  ],
+  "selectedDiagram": "Modelo",
+  "defaultDiagram": "Todas las tablas"
+}

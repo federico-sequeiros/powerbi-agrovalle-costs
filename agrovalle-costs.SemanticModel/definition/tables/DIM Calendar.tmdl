@@ -1,0 +1,217 @@
+table 'DIM Calendar'
+	lineageTag: 4475d2ee-8b91-4111-a447-6e5429c5267f
+
+	column Fecha
+		dataType: dateTime
+		formatString: Short Date
+		lineageTag: 02514c0f-9500-4c21-8276-dea35340a35f
+		summarizeBy: none
+		sourceColumn: Fecha
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column FechaSK
+		dataType: string
+		lineageTag: 83ec07c6-a9e2-4299-8a6c-790b37b6ea77
+		summarizeBy: none
+		sourceColumn: FechaSK
+
+		annotation SummarizationSetBy = Automatic
+
+	column #Año
+		dataType: int64
+		formatString: 0
+		lineageTag: b7277fc8-abae-48e6-ad1c-6fa2debc7fd5
+		summarizeBy: none
+		sourceColumn: #Año
+
+		annotation SummarizationSetBy = Automatic
+
+	column #Trimestre
+		dataType: int64
+		formatString: 0
+		lineageTag: 66cd6634-1273-4d25-9522-71714ab0d07e
+		summarizeBy: none
+		sourceColumn: #Trimestre
+
+		annotation SummarizationSetBy = Automatic
+
+	column #Mes
+		dataType: int64
+		formatString: 0
+		lineageTag: 9975fe29-c3c6-431f-91a0-4e1dfc757543
+		summarizeBy: none
+		sourceColumn: #Mes
+
+		annotation SummarizationSetBy = Automatic
+
+	column #Día
+		dataType: int64
+		formatString: 0
+		lineageTag: 72e60813-5d36-4c9e-b32c-610f58fc7326
+		summarizeBy: none
+		sourceColumn: #Día
+
+		annotation SummarizationSetBy = Automatic
+
+	column Trimestre
+		dataType: string
+		lineageTag: dc83cf5e-7f01-4a38-8c49-d0ac377ea606
+		summarizeBy: none
+		sourceColumn: Trimestre
+
+		annotation SummarizationSetBy = Automatic
+
+	column Mes
+		dataType: string
+		lineageTag: 68d9ab3c-4d8d-44ad-b537-36fc5a773b05
+		summarizeBy: none
+		sourceColumn: Mes
+		sortByColumn: #Mes
+
+		changedProperty = SortByColumn
+
+		annotation SummarizationSetBy = Automatic
+
+	column MesCorto
+		dataType: string
+		lineageTag: b8bb8f34-0025-497e-8c5b-d83e30325318
+		summarizeBy: none
+		sourceColumn: MesCorto
+		sortByColumn: #Mes
+
+		changedProperty = SortByColumn
+
+		annotation SummarizationSetBy = Automatic
+
+	column #DíaSemana
+		dataType: int64
+		formatString: 0
+		lineageTag: 74a514a4-0183-4829-a7aa-8c5b1dbeb745
+		summarizeBy: none
+		sourceColumn: #DíaSemana
+
+		annotation SummarizationSetBy = Automatic
+
+	column #SemanaAño
+		dataType: int64
+		formatString: 0
+		lineageTag: c02569ec-85ab-4f2e-84dd-d8f79efef243
+		summarizeBy: none
+		sourceColumn: #SemanaAño
+
+		annotation SummarizationSetBy = Automatic
+
+	column #SemanaMes
+		dataType: int64
+		formatString: 0
+		lineageTag: fb98a1b2-5a0d-4489-99ea-56deb4e4e11d
+		summarizeBy: none
+		sourceColumn: #SemanaMes
+
+		annotation SummarizationSetBy = Automatic
+
+	column CierreSemana
+		dataType: dateTime
+		formatString: Short Date
+		lineageTag: 7ccf937e-0332-4c90-869e-ca25557fc819
+		summarizeBy: none
+		sourceColumn: CierreSemana
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column #DíaAño
+		dataType: int64
+		formatString: 0
+		lineageTag: 1f6961f3-e8fa-40c9-a737-076503337db4
+		summarizeBy: none
+		sourceColumn: #DíaAño
+
+		annotation SummarizationSetBy = Automatic
+
+	column Día
+		dataType: string
+		lineageTag: 8e457dd8-3231-4cde-8d17-1df3d71ee93c
+		summarizeBy: none
+		sourceColumn: Día
+		sortByColumn: #DíaSemana
+
+		changedProperty = SortByColumn
+
+		annotation SummarizationSetBy = Automatic
+
+	column DíaCorto
+		dataType: string
+		lineageTag: 5722094c-438a-49fc-aedc-b10eedf985e0
+		summarizeBy: none
+		sourceColumn: DíaCorto
+
+		annotation SummarizationSetBy = Automatic
+
+	column AñoTrimestre
+		dataType: string
+		lineageTag: 59c8b37b-97b0-4d96-bcfb-c9ca3eed48f8
+		summarizeBy: none
+		sourceColumn: AñoTrimestre
+
+		annotation SummarizationSetBy = Automatic
+
+	column Año#Mes
+		dataType: string
+		lineageTag: dcbac474-75cc-4a95-8cad-015c3272d069
+		summarizeBy: none
+		sourceColumn: Año#Mes
+
+		annotation SummarizationSetBy = Automatic
+
+	column AñoMesCorto
+		dataType: string
+		lineageTag: 9e225198-9bb4-478e-9b5b-24a96d90922a
+		summarizeBy: none
+		sourceColumn: AñoMesCorto
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'DIM Calendar' = m
+		mode: import
+		source =
+				let
+				    Source = #"FAC Facturas"[FECHA_MOV],
+				    FechaInicio = #date(Date.Year(List.Min(Source)),Date.Month(List.Min(Source)),Date.Day(List.Min(Source))),
+				    FechaFinal = Date.From(DateTime.LocalNow()),
+				    ListaInicioFinal = {Number.From(FechaInicio)..Number.From(FechaFinal)},
+				    #"Converted to Table" = Table.FromList(ListaInicioFinal, Splitter.SplitByNothing(), null, null, ExtraValues.Error),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Converted to Table",{{"Column1", type date}}),
+				    #"Renamed Columns" = Table.RenameColumns(#"Changed Type",{{"Column1", "Fecha"}}),
+				    #"Added Custom Column" = Table.AddColumn(#"Renamed Columns", "Custom", each Text.Combine({Date.ToText([Fecha], "yyyy"), Date.ToText([Fecha], "MM"), Date.ToText([Fecha], "dd")}), type text),
+				    #"Inserted Year" = Table.AddColumn(#"Added Custom Column", "Year", each Date.Year([Fecha]), Int64.Type),
+				    #"Inserted Quarter" = Table.AddColumn(#"Inserted Year", "Quarter", each Date.QuarterOfYear([Fecha]), Int64.Type),
+				    #"Inserted Month" = Table.AddColumn(#"Inserted Quarter", "Month", each Date.Month([Fecha]), Int64.Type),
+				    #"Inserted Day" = Table.AddColumn(#"Inserted Month", "Day", each Date.Day([Fecha]), Int64.Type),
+				    #"Inserted Merged Column" = Table.AddColumn(#"Inserted Day", "Merged", each Text.Combine({"T", Text.From([Quarter], "es-MX")}), type text),
+				    #"Inserted Month Name" = Table.AddColumn(#"Inserted Merged Column", "Month Name", each Date.MonthName([Fecha]), type text),
+				    #"Inserted First Characters" = Table.AddColumn(#"Inserted Month Name", "First Characters", each Text.Start([Month Name], 3), type text),
+				    #"Inserted Day of Week" = Table.AddColumn(#"Inserted First Characters", "Day of Week", each Date.DayOfWeek([Fecha], Day.Monday), Int64.Type),
+				    #"Inserted Week of Year" = Table.AddColumn(#"Inserted Day of Week", "Week of Year", each Date.WeekOfYear([Fecha]), Int64.Type),
+				    #"Inserted Week of Month" = Table.AddColumn(#"Inserted Week of Year", "Week of Month", each Date.WeekOfMonth([Fecha]), Int64.Type),
+				    #"Inserted End of Week" = Table.AddColumn(#"Inserted Week of Month", "End of Week", each Date.EndOfWeek([Fecha],Day.Monday), type date),
+				    #"Inserted Day of Year" = Table.AddColumn(#"Inserted End of Week", "Day of Year", each Date.DayOfYear([Fecha]), Int64.Type),
+				    #"Inserted Day Name" = Table.AddColumn(#"Inserted Day of Year", "Day Name", each Date.DayOfWeekName([Fecha]), type text),
+				    #"Inserted First Characters1" = Table.AddColumn(#"Inserted Day Name", "First Characters.1", each Text.Start([Day Name], 3), type text),
+				    #"Inserted Merged Column1" = Table.AddColumn(#"Inserted First Characters1", "Merged.1", each Text.Combine({Text.From([Year], "es-MX"), [Merged]}, "/"), type text),
+				    #"Inserted First Characters2" = Table.AddColumn(#"Inserted Merged Column1", "First Characters.2", each Text.Start([Custom], 6), type text),
+				    #"Split Column by Position" = Table.SplitColumn(#"Inserted First Characters2", "First Characters.2", Splitter.SplitTextByPositions({0, 4}, false), {"First Characters.2.1", "First Characters.2.2"}),
+				    #"Merged Columns" = Table.CombineColumns(#"Split Column by Position",{"First Characters.2.1", "First Characters.2.2"},Combiner.CombineTextByDelimiter("", QuoteStyle.None),"Merged.3"),
+				    #"Inserted Merged Column2" = Table.AddColumn(#"Merged Columns", "Merged.2", each Text.Combine({Text.From([Year], "es-MX"), "/", [First Characters]}), type text),
+				    #"Renamed Columns1" = Table.RenameColumns(#"Inserted Merged Column2",{{"Custom", "FechaSK"}, {"Year", "#Año"}, {"Quarter", "#Trimestre"}, {"Month", "#Mes"}, {"Day", "#Día"}, {"Merged", "Trimestre"}, {"Month Name", "Mes"}, {"First Characters", "MesCorto"}, {"Day of Week", "#DíaSemana"}, {"Week of Year", "#SemanaAño"}, {"Week of Month", "#SemanaMes"}, {"End of Week", "CierreSemana"}, {"Day of Year", "#DíaAño"}, {"Day Name", "Día"}, {"First Characters.1", "DíaCorto"}, {"Merged.1", "AñoTrimestre"}, {"Merged.3", "Año#Mes"}, {"Merged.2", "AñoMesCorto"}})
+				in
+				    #"Renamed Columns1"
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navegación
+

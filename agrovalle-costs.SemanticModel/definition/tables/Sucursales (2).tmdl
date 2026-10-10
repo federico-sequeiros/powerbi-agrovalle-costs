@@ -1,0 +1,90 @@
+table 'Sucursales (2)'
+	lineageTag: 40efee28-8fe4-4c59-bdb7-b28be6eeab2e
+
+	column ID_SUCURSAL
+		dataType: int64
+		formatString: 0
+		lineageTag: 4c5cc6ad-3755-4e78-b040-52831dd5cb77
+		summarizeBy: none
+		sourceColumn: ID_SUCURSAL
+
+		annotation SummarizationSetBy = Automatic
+
+	column DESC_SUCURSAL
+		dataType: string
+		lineageTag: 1ce67b57-b4e9-4f24-a853-06793b8b92a0
+		summarizeBy: none
+		sourceColumn: DESC_SUCURSAL
+
+		annotation SummarizationSetBy = Automatic
+
+	column CALLE
+		dataType: string
+		lineageTag: 542b7d33-82fd-4b39-9b61-576f7877a157
+		summarizeBy: none
+		sourceColumn: CALLE
+
+		annotation SummarizationSetBy = Automatic
+
+	column NRO_DOMIC
+		dataType: string
+		lineageTag: e2f742f5-9a88-437f-82cf-dd43620643b5
+		summarizeBy: none
+		sourceColumn: NRO_DOMIC
+
+		annotation SummarizationSetBy = Automatic
+
+	column LOCALIDAD
+		dataType: string
+		lineageTag: b990c197-7e82-40f7-9f47-3533d55af2ca
+		summarizeBy: none
+		sourceColumn: LOCALIDAD
+
+		annotation SummarizationSetBy = Automatic
+
+	column CODIGO_POSTAL
+		dataType: string
+		lineageTag: 7e216f5f-6687-4458-b8ed-c8e15fc1ff33
+		summarizeBy: none
+		sourceColumn: CODIGO_POSTAL
+
+		annotation SummarizationSetBy = Automatic
+
+	column NRO_SUCURSAL
+		dataType: int64
+		formatString: 0
+		lineageTag: f29e416b-6a09-4d9b-b70e-7f08d778d76a
+		summarizeBy: none
+		sourceColumn: NRO_SUCURSAL
+
+		annotation SummarizationSetBy = Automatic
+
+	column BASE
+		dataType: string
+		lineageTag: 2426e593-5f6b-4155-8ce9-e79ac316d946
+		summarizeBy: none
+		sourceColumn: BASE
+
+		annotation SummarizationSetBy = Automatic
+
+	column Sucursal
+		dataType: string
+		lineageTag: 73b89b8d-47e6-4b50-a4d5-3f7b9c7b0956
+		summarizeBy: none
+		sourceColumn: Sucursal
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Sucursales (2)' = m
+		mode: import
+		source =
+				let
+				    Origen = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText("dZFLa8QgFIX/imQ9i+gkTbZD6K6PoYHZhCwuiUwFUTDaRX99PdaCNBnwXPDew/l8TFNVV6dqVIbRpu6GXNyVq84qHfNpqjh6dlFypZW9WeclGyn2PoIndnX2S5lFkWZt7PFzF+tNaU3soj1s7VOPVJ61TwJDlJMxuGNCj4yuifUapPOWDZ9qsYkhwBBZ/5NAOJf9QRrv7DGE45Qi1cFucXb5DjoxODL+dJAFTFOOnrdHb8XhEw0u9GpNdN2kW2WidLhJk7WLAqMtB+/yMQR/IXrYX+geDP2+eaLUoLRZ+7B5/gE=", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type nullable text) meta [Serialized.Text = true]) in type table [ID_SUCURSAL = _t, DESC_SUCURSAL = _t, CALLE = _t, NRO_DOMIC = _t, LOCALIDAD = _t, CODIGO_POSTAL = _t, NRO_SUCURSAL = _t, BASE = _t, Sucursal = _t]),
+				    #"Tipo cambiado" = Table.TransformColumnTypes(Origen,{{"ID_SUCURSAL", Int64.Type}, {"DESC_SUCURSAL", type text}, {"CALLE", type text}, {"NRO_DOMIC", type text}, {"LOCALIDAD", type text}, {"CODIGO_POSTAL", type text}, {"NRO_SUCURSAL", Int64.Type}, {"BASE", type text}, {"Sucursal", type text}}, "en-US")
+				in
+				    #"Tipo cambiado"
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navegación
+

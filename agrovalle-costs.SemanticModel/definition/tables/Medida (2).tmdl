@@ -1,0 +1,57 @@
+table 'Medida (2)'
+	lineageTag: e855569d-1fdf-47f9-a08a-6736c10f94fc
+
+	column ID_MEDIDA
+		dataType: int64
+		formatString: 0
+		lineageTag: d823703a-e910-4b66-b4fb-b2d10536654a
+		summarizeBy: none
+		sourceColumn: ID_MEDIDA
+
+		annotation SummarizationSetBy = Automatic
+
+	column COD_MEDIDA
+		dataType: string
+		lineageTag: 8137a65c-9d72-42c3-8cd8-8f0efa7c4f67
+		summarizeBy: none
+		sourceColumn: COD_MEDIDA
+
+		annotation SummarizationSetBy = Automatic
+
+	column DESC_MEDIDA
+		dataType: string
+		lineageTag: 28687e24-1c27-42ed-bbc9-167b7ba48d96
+		summarizeBy: none
+		sourceColumn: DESC_MEDIDA
+
+		annotation SummarizationSetBy = Automatic
+
+	column SIGLA_MEDIDA
+		dataType: string
+		lineageTag: 7353f06d-0b38-4e9d-a778-5f5176f223d1
+		summarizeBy: none
+		sourceColumn: SIGLA_MEDIDA
+
+		annotation SummarizationSetBy = Automatic
+
+	column ID_MEDIDA_BASE
+		dataType: string
+		lineageTag: 3ee3f84e-6cb9-404e-9c2c-f370ba37772d
+		summarizeBy: none
+		sourceColumn: ID_MEDIDA_BASE
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Medida (2)' = m
+		mode: import
+		source =
+				let
+				    Origen = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText("JY7NCgIhGEXfxfVs5v8JoqCmzdhKXEjKJDkKjvX83Wub8x04XPiUEq1oxONORG+NhXwi0ArdKNHBbpLwJSfcUICuth52PRM+pC2bnf29AX3tA2zhdnH/7c7tUNsIu6xEygbndQBjTRNsPREuf/3Tc3k4YKp5hkm+K1N0wViuCx+ehdY/", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type nullable text) meta [Serialized.Text = true]) in type table [ID_MEDIDA = _t, COD_MEDIDA = _t, DESC_MEDIDA = _t, SIGLA_MEDIDA = _t, ID_MEDIDA_BASE = _t]),
+				    #"Tipo cambiado" = Table.TransformColumnTypes(Origen,{{"ID_MEDIDA", Int64.Type}, {"COD_MEDIDA", type text}, {"DESC_MEDIDA", type text}, {"SIGLA_MEDIDA", type text}, {"ID_MEDIDA_BASE", type text}}, "en-US")
+				in
+				    #"Tipo cambiado"
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navegación
+

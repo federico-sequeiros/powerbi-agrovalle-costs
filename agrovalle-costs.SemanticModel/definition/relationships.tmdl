@@ -1,0 +1,72 @@
+relationship a8eb8bf0-5e69-43c5-8cc7-f96bf148ca12
+	crossFilteringBehavior: bothDirections
+	fromCardinality: one
+	fromColumn: 'FAC Ordenes de Compra'.N_OC_RENG
+	toColumn: 'Enlace SC OC Factura'.N_OC_RENG
+
+relationship 0849fe87-6c04-49ff-8583-5fff2f8a3376
+	fromColumn: Depositos.ID_SUCURSAL
+	toColumn: Sucursales.ID_SUCURSAL
+
+relationship ec859b64-4b56-4187-9ac3-54b7fdc2f8e1
+	fromColumn: 'FAC Ordenes de Compra'.ID_SUCURSAL
+	toColumn: 'Sucursales (2)'.ID_SUCURSAL
+
+relationship 0298da3c-c2dc-40a4-af92-9c335d8aef1c
+	fromColumn: 'FAC Ordenes de Compra'.COD_DEPOSI
+	toColumn: 'Depositos (2)'.COD_SUCURS
+
+relationship 51049557-1c17-4ceb-bbd6-fedf2a467834
+	fromColumn: 'FAC Ordenes de Compra'.ID_MEDIDA_STOCK
+	toColumn: 'Medida (2)'.ID_MEDIDA
+
+relationship 3007b646-2b25-4f2f-b3a3-e51487ce7e46
+	fromColumn: 'FAC Ordenes de Compra'.COD_CLASIF
+	toColumn: 'DIM Clasificacion'.COD_CLASIF
+
+relationship cc8e42be-a30f-490e-a61b-d208d4aa7255
+	fromColumn: 'FAC Ordenes de Compra'.COD_ARTICU
+	toColumn: 'Articulos (2)'.COD_ARTICU
+
+relationship 92fd3f3a-458a-406b-b07d-0172d4e189a7
+	fromColumn: 'FAC Facturas'.COD_ARTICU
+	toColumn: Articulos.COD_ARTICU
+
+relationship 92d570ea-4136-44bd-9ac0-1ff81934c194
+	fromColumn: 'FAC Facturas'.TIPO
+	toColumn: 'DIM Tipo de Factura'.TIPO
+
+relationship c66a3641-842e-4c66-b9c4-db9669332ef5
+	fromColumn: 'FAC Facturas'.COD_CONCEP_BASE
+	toColumn: 'DIM Conceptos'.COD_CONCEP_BASE
+
+relationship 3acc90ff-af33-4163-acfa-a5367aa271b9
+	fromColumn: 'FAC Facturas'.COD_DEPOSI
+	toColumn: Depositos.COD_SUCURS
+
+relationship 63e060f4-9df7-4500-b58e-d88fee3d53e3
+	fromColumn: 'FAC Facturas'.FECHA_MOV
+	toColumn: 'DIM Calendar'.Fecha
+
+relationship 5a8efd78-cddc-46f3-a223-a77b73f2bd58
+	fromColumn: 'FAC Facturas'.ID_MEDIDA_STOCK
+	toColumn: Medida.ID_MEDIDA
+
+relationship ec4ebe26-c973-4b17-8cb2-65369f7d40a1
+	crossFilteringBehavior: bothDirections
+	fromColumn: 'FAC Facturas'.INTERNO
+	toColumn: 'Enlace SC OC Factura'.INTERNO
+
+relationship 3e0edcb1-6804-4b6b-8802-a2994fb5afa7
+	fromColumn: 'FAC Facturas'.BASE
+	toColumn: 'DIM Base'.IDBASE
+
+relationship f468153b-60d5-4c3e-b640-a8f9f0c91a0f
+	fromColumn: 'FAC Facturas'.COD_PROVEE_BASE
+	toColumn: Proveedores.COD_PROVEE_BASE
+
+relationship 74f1011c-286b-4029-b205-084f3b1c86f2
+	isActive: false
+	fromColumn: 'FAC Ordenes de Compra'.FEC_EMISIO
+	toColumn: 'DIM Calendar'.Fecha
+

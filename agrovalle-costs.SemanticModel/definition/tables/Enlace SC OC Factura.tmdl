@@ -1,0 +1,169 @@
+table 'Enlace SC OC Factura'
+	lineageTag: d1f14ee8-e704-44f6-82db-51432daa34b3
+
+	column ID_ENLACE
+		dataType: int64
+		formatString: 0
+		lineageTag: 571b5963-1bbb-4278-90a7-b7ae9b49a8ca
+		summarizeBy: none
+		sourceColumn: ID_ENLACE
+
+		annotation SummarizationSetBy = Automatic
+
+	column CANTIDAD
+		dataType: double
+		lineageTag: f4f59100-911a-421f-bd36-04f62670e533
+		summarizeBy: none
+		sourceColumn: CANTIDAD
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column CANTIDAD_2
+		dataType: double
+		lineageTag: 36c9d141-2d3c-467b-89b1-85c9c8df49e8
+		summarizeBy: none
+		sourceColumn: CANTIDAD_2
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column TCOMP_IN_C
+		dataType: string
+		lineageTag: 510b3513-7a45-4e86-9976-cdd616f94b73
+		summarizeBy: none
+		sourceColumn: TCOMP_IN_C
+
+		annotation SummarizationSetBy = Automatic
+
+	column NCOMP_IN_C
+		dataType: double
+		lineageTag: 81f684d0-b9ca-4061-9c96-85267dd7e309
+		summarizeBy: none
+		sourceColumn: NCOMP_IN_C
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column N_RENGL_C
+		dataType: int64
+		formatString: 0
+		lineageTag: 8cce6d5a-0c96-4aa4-986c-868f7a9c0921
+		summarizeBy: none
+		sourceColumn: N_RENGL_C
+
+		annotation SummarizationSetBy = Automatic
+
+	column TALONARIO_OC
+		dataType: int64
+		formatString: 0
+		lineageTag: b8fc9c53-82b6-4b68-881e-021cd50e1758
+		summarizeBy: none
+		sourceColumn: TALONARIO_OC
+
+		annotation SummarizationSetBy = Automatic
+
+	column N_ORDEN_CO
+		dataType: string
+		lineageTag: 12adc51a-0d91-4259-9479-b402cb24120a
+		summarizeBy: none
+		sourceColumn: N_ORDEN_CO
+
+		annotation SummarizationSetBy = Automatic
+
+	column N_RENGL_OC
+		dataType: int64
+		formatString: 0
+		lineageTag: 045aba16-96ec-4065-93d8-cc76d1ba2a0c
+		summarizeBy: none
+		sourceColumn: N_RENGL_OC
+
+		annotation SummarizationSetBy = Automatic
+
+	column TAL_SOLIC
+		dataType: int64
+		formatString: 0
+		lineageTag: a3838389-884d-4fff-b94c-e32de0c2c906
+		summarizeBy: none
+		sourceColumn: TAL_SOLIC
+
+		annotation SummarizationSetBy = Automatic
+
+	column NRO_SOLIC
+		dataType: string
+		lineageTag: ed8fef77-4abb-465c-b50f-6a0d0d63d6e4
+		summarizeBy: none
+		sourceColumn: NRO_SOLIC
+
+		annotation SummarizationSetBy = Automatic
+
+	column NRO_RENGL
+		dataType: int64
+		formatString: 0
+		lineageTag: 6c4670ca-ddfa-45ca-bba1-74195ccb3903
+		summarizeBy: none
+		sourceColumn: NRO_RENGL
+
+		annotation SummarizationSetBy = Automatic
+
+	column CANTIDAD_NC
+		dataType: double
+		lineageTag: a950374b-fdbd-464b-bba0-7d9917890a4c
+		summarizeBy: none
+		sourceColumn: CANTIDAD_NC
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column CANTIDAD_NC_2
+		dataType: double
+		lineageTag: 2abc914a-f8a9-4c35-9319-421b2d8963a7
+		summarizeBy: none
+		sourceColumn: CANTIDAD_NC_2
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column N_OC_RENG
+		dataType: string
+		lineageTag: 5cb52ae0-eb30-4b78-b13e-6e11a0ff2f3c
+		summarizeBy: none
+		sourceColumn: N_OC_RENG
+
+		annotation SummarizationSetBy = Automatic
+
+	column N_SC_RENG
+		dataType: string
+		lineageTag: dd569321-1374-4724-90ab-96958913246a
+		summarizeBy: none
+		sourceColumn: N_SC_RENG
+
+		annotation SummarizationSetBy = Automatic
+
+	column INTERNO
+		dataType: string
+		lineageTag: dd283e5f-aed9-4c73-88ff-7b1de8bb7b90
+		summarizeBy: none
+		sourceColumn: INTERNO
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Enlace SC OC Factura' = m
+		mode: import
+		queryGroup: Compras
+		source =
+				let
+				    Origen = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText("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", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type nullable text) meta [Serialized.Text = true]) in type table [ID_ENLACE = _t, CANTIDAD = _t, CANTIDAD_2 = _t, TCOMP_IN_C = _t, NCOMP_IN_C = _t, N_RENGL_C = _t, TALONARIO_OC = _t, N_ORDEN_CO = _t, N_RENGL_OC = _t, TAL_SOLIC = _t, NRO_SOLIC = _t, NRO_RENGL = _t, CANTIDAD_NC = _t, CANTIDAD_NC_2 = _t, N_OC_RENG = _t, N_SC_RENG = _t, INTERNO = _t]),
+				    #"Tipo cambiado" = Table.TransformColumnTypes(Origen,{{"ID_ENLACE", Int64.Type}, {"CANTIDAD", type number}, {"CANTIDAD_2", type number}, {"TCOMP_IN_C", type text}, {"NCOMP_IN_C", type number}, {"N_RENGL_C", Int64.Type}, {"TALONARIO_OC", Int64.Type}, {"N_ORDEN_CO", type text}, {"N_RENGL_OC", Int64.Type}, {"TAL_SOLIC", Int64.Type}, {"NRO_SOLIC", type text}, {"NRO_RENGL", Int64.Type}, {"CANTIDAD_NC", type number}, {"CANTIDAD_NC_2", type number}, {"N_OC_RENG", type text}, {"N_SC_RENG", type text}, {"INTERNO", type text}}, "en-US")
+				in
+				    #"Tipo cambiado"
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navegación
+

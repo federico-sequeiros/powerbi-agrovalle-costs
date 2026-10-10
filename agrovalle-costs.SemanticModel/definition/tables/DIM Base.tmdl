@@ -1,0 +1,34 @@
+table 'DIM Base'
+	lineageTag: 6613427c-2188-4fe0-8011-5b27daa49266
+
+	column IDBASE
+		dataType: int64
+		formatString: 0
+		lineageTag: f7f4b469-af0e-4e6e-9f69-0ae5ca720c1f
+		summarizeBy: none
+		sourceColumn: IDBASE
+
+		annotation SummarizationSetBy = Automatic
+
+	column DESCRIPCION
+		dataType: string
+		lineageTag: 0a33419f-5883-4f46-a499-4e7d3fc92e88
+		summarizeBy: none
+		sourceColumn: DESCRIPCION
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'DIM Base' = m
+		mode: import
+		queryGroup: Facturas
+		source =
+				let
+				    Origen = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText("i45WMlTSUQrOT85MTUlMUfDLLypJVYrViVYyQhYOLi0CCxojCzqn5pUU5YPFTZDFXYuhRpgii/qngoVjAQ==", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type nullable text) meta [Serialized.Text = true]) in type table [IDBASE = _t, DESCRIPCION = _t]),
+				    #"Tipo cambiado" = Table.TransformColumnTypes(Origen,{{"IDBASE", Int64.Type}, {"DESCRIPCION", type text}}, "en-US")
+				in
+				    #"Tipo cambiado"
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navegación
+

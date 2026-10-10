@@ -1,2 +1,0 @@
-# powerbi-agrovalle-costs
-

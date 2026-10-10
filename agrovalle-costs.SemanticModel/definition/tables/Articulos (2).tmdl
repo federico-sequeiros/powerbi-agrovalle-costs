@@ -1,0 +1,92 @@
+table 'Articulos (2)'
+	lineageTag: 3a8a1842-0df3-4a8c-9035-efd53a1d5f64
+
+	column ID_ARTICULO
+		dataType: int64
+		formatString: 0
+		lineageTag: d437a6cd-98d3-4aeb-802c-1eb93926b45d
+		summarizeBy: none
+		sourceColumn: ID_ARTICULO
+
+		annotation SummarizationSetBy = Automatic
+
+	column COD_ARTICU
+		dataType: string
+		lineageTag: 14641fb2-9ed2-4c66-853f-876befc92c6c
+		summarizeBy: none
+		sourceColumn: COD_ARTICU
+
+		annotation SummarizationSetBy = Automatic
+
+	column DESCRIPCIO
+		dataType: string
+		lineageTag: 3f871340-1032-4ff6-a61e-5f2d6fb23ae8
+		summarizeBy: none
+		sourceColumn: DESCRIPCIO
+
+		annotation SummarizationSetBy = Automatic
+
+	column DESC_ADIC
+		dataType: string
+		lineageTag: 1fcfdace-ae4b-4255-9d6c-18c810b6ec73
+		summarizeBy: none
+		sourceColumn: DESC_ADIC
+
+		annotation SummarizationSetBy = Automatic
+
+	column ID_MEDIDA_STOCK
+		dataType: int64
+		formatString: 0
+		lineageTag: 8be4eedb-af4f-49e2-8b46-d6e6406b6fd2
+		summarizeBy: none
+		sourceColumn: ID_MEDIDA_STOCK
+
+		annotation SummarizationSetBy = Automatic
+
+	column CARPETA
+		dataType: string
+		lineageTag: 0185dd9f-8816-4008-9dfe-626765fb9a6a
+		summarizeBy: none
+		sourceColumn: CARPETA
+
+		annotation SummarizationSetBy = Automatic
+
+	column FAMILIA
+		dataType: string
+		lineageTag: 121539f7-f461-46bb-a228-227e346569d6
+		summarizeBy: none
+		sourceColumn: FAMILIA
+
+		annotation SummarizationSetBy = Automatic
+
+	column ID_GENERICO
+		dataType: int64
+		formatString: 0
+		lineageTag: 273a27b4-a0e0-4366-8294-127156c295de
+		summarizeBy: none
+		sourceColumn: ID_GENERICO
+
+		annotation SummarizationSetBy = Automatic
+
+	column BUSCADOR
+		dataType: string
+		lineageTag: 6a39f8c1-ebaf-492b-8f3c-3441a276583a
+		summarizeBy: none
+		sourceColumn: BUSCADOR
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Articulos (2)' = m
+		mode: import
+		queryGroup: Stock
+		source =
+				let
+				    Origen = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText("pVddc9o6EP0rO3luAjaBJo/CCKpWxlSYTG4/HgSoGXUMTv3Rh/76rlaIj+ROLszttJ3jgXMOWums1l+/XkVX765YF/84MCv0SgMr2o3d2hLed9/3IR/gB/g3xn9T0250Y1dl/fKB2JIlDJhcpGIqsj37+7uvRCYXBya6Lm0Bk0qvS4gP6km5WbZ1Y5eFqV8/EpPNMyFhotgoQ6ZT7gVlB1Kz0luLS8hNtbK6sn/0WnsDt4q5qX7blaUfvMfH36VPSIgnbCpwNTlXiWBKfGEjRn63wc+BvKy2prL/z4+EMjXlSvyLXz/49Y9LDr3oOurf9PE/bxe9uTvE5YuU5SLJjrnOYRAcHBibqrEF/rZtY9wObdsCf6b3cIUR27rdkOYOAXuq0KXQ9W7RY65yIXEB05y7nZouJO4WOb0PTg6kelvCyEC2rHYl659dMuKzaQYjDtlQ+UrdBfW700r1dqsd3JxVq7vTWh2znct9cLn3eWnsVsOsIwusmD7oK/PcmrohxT2Gf4CtVqYuK7/Aex+aXEyZk5BYMr+UqLtzIXC86/1Or3+t4u45K/Hko23fk8kjJD86UYF40O8MutcqujvLIzrxOCKTR8g9gclzDTNdaUj1rxbLhsG5sGBeZjaHGVMMUvZ5gaXD2Hiz0AoIpLq5AV6YVeOOZw0Peqex8wsf2bVev370EixHCcmTXOHa5vCAVtnce4U2QCCr7PYJsus4uj8YfLDrSrcFdqOXD56jxHSy45BiCDqBvMUTr+HuMbqJ++kGWNuUPyqzdbG8tGakt8C+woJeCmyRZ2PFpy6k3j50AQKJLvAkfLuafruCeWd2cNxXcQ/895nEzT98nxRD2gmMbI2K40I/wy1EnfioTqaq9MYajE/9+tGTxRzlx5LNdmTSD3knMNZVCVI3ptIFsM1SV2dvNdGZygCTyBWTwNIhU94jpJ3AiYcqf5ZnW9y/tFDZR98S45B0AlJvnl1ApFlDfPtwrr7nspRSIfmIuKQeMk5gboqihP1RLKHfTTfnHFjP5lJm8EGMFFtIl3Vkp94lpJyA79oG8Pp+LkxTXnodehGuHkTCIcnSmeT5rlYh4B4UZmPxkho8RhcmwtMlTwXeUI5O4iHRBPByesIIaojuQ4lu3y7Rrb+SJhg05li70oRUE5i0dK2OTL3SVaNxsDk3Bp6+oDt1xOcJUzkbSh/dOEQ39tHdLG3ZwcXjQcICbyFplxZv9YvnEi+HYRBZR3F3thKRTSFZDAVe8b7nxiHkBD7ZBjDoeDKXrbO+dF9IQ+SAeceWO1w4P28Tsk5g6CKIQ1cUP0DU7bKzY0Jkl0ActPZk0g85JzDEwROn4KcWb6qyKatLl0EaGTYRYLhlkGY43flZNYTdg5Vx5/coj4O7wzAs2yX+cnde6ldPnp5wd36PAjnwl24vhJ7A2BZNRYMWs9Wld4dXEDJXNGoxofyR64XEEziyoCVdahKfmtC6vE0IPAGcRmtsjbZxA/4jfHo6TKVvFou4is2xNYrczfTInXj9kHkPCoxOhVOvLn7jW8Sfk7n39cXnOdh1hwrnXCYf8IXhS5h0eyH3BBKLMQZlzVMJ0eC4obw9TnuywKkQlOCTzJF9X+mFzBOYt8UP3dAOzEpsGPbsgd3TF3LMcir+LMvZXOzWELJNYFEZvX8h0GfrE1Vxtn8T8IHrhUATwGa3pJTCxLj3KYzCI8RdeUjDf7iQCFdDkYgRWnH3LoWB8CLkFwJOINE/tStWgl0YGyTHS/dXa96acjyNfWSuSK77YiPkeN9+XviTehuSTWCmC7z5cMxdm0q/Jeu/zSRecTjNjrh7k/n+Fw==", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type nullable text) meta [Serialized.Text = true]) in type table [ID_ARTICULO = _t, COD_ARTICU = _t, DESCRIPCIO = _t, DESC_ADIC = _t, ID_MEDIDA_STOCK = _t, CARPETA = _t, FAMILIA = _t, ID_GENERICO = _t, BUSCADOR = _t]),
+				    #"Tipo cambiado" = Table.TransformColumnTypes(Origen,{{"ID_ARTICULO", Int64.Type}, {"COD_ARTICU", type text}, {"DESCRIPCIO", type text}, {"DESC_ADIC", type text}, {"ID_MEDIDA_STOCK", Int64.Type}, {"CARPETA", type text}, {"FAMILIA", type text}, {"ID_GENERICO", Int64.Type}, {"BUSCADOR", type text}}, "en-US")
+				in
+				    #"Tipo cambiado"
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navegación
+

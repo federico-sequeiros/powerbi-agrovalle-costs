@@ -1,0 +1,49 @@
+model Model
+	culture: es-ES
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	sourceQueryCulture: es-ES
+	dataAccessOptions
+		legacyRedirects
+		returnErrorValuesAsNull
+
+queryGroup Stock
+
+	annotation PBI_QueryGroupOrder = 0
+
+queryGroup Compras
+
+	annotation PBI_QueryGroupOrder = 1
+
+queryGroup Facturas
+
+	annotation PBI_QueryGroupOrder = 2
+
+annotation __PBI_TimeIntelligenceEnabled = 0
+
+annotation PBI_QueryOrder = ["Medidas FAC", "FechaAct", "Enlace SC OC Factura", "FAC Ordenes de Compra", "Articulos", "Depositos", "Sucursales", "Medida", "Sucursales (2)", "Depositos (2)", "Medida (2)", "Medidas OC", "DIM Clasificacion", "DIM Calendar", "Articulos (2)", "DIM Tipo de Factura", "DIM Conceptos", "FAC Facturas", "DIM Base", "Proveedores"]
+
+annotation PBI_ProTooling = ["DevMode"]
+
+ref table 'Medidas FAC'
+ref table FechaAct
+ref table 'Enlace SC OC Factura'
+ref table 'FAC Ordenes de Compra'
+ref table Articulos
+ref table Depositos
+ref table Sucursales
+ref table Medida
+ref table 'Sucursales (2)'
+ref table 'Depositos (2)'
+ref table 'Medida (2)'
+ref table 'Medidas OC'
+ref table 'DIM Clasificacion'
+ref table 'DIM Calendar'
+ref table 'Articulos (2)'
+ref table 'DIM Tipo de Factura'
+ref table 'DIM Conceptos'
+ref table 'FAC Facturas'
+ref table 'DIM Base'
+ref table Proveedores
+
+ref cultureInfo es-ES
+
