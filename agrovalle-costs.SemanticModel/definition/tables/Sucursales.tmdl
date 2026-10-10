@@ -72,9 +72,13 @@ table Sucursales
 		source =
 				let
 				    Origen = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText("ddA/q4MwFAXwrxKcO5hUq2uRt/UfFbqIw0VDXyAkEJMO79O/nNslQwueC8bDj2umqaqrXTUaJ2gzT0chv5VPzZl3UyXR84vRK63i4kPUYqR8dk+RxC34l3GLISvafCb3XZ4PYy2Jo42otYceluTAU6U3pvBZ69HvmjxvSYfoxfBrFs+egqc48PalN2gXg/9MSuygeA5+y9+Of8myKGG8A7EpxZ/t2w9L9FSDTc/e5dZDh1Uz2GHFhgOwLcGr/i7i9lSP+omeydH7vpmsQbacef4H", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type nullable text) meta [Serialized.Text = true]) in type table [ID_SUCURSAL = _t, DESC_SUCURSAL = _t, CALLE = _t, NRO_DOMIC = _t, LOCALIDAD = _t, CODIGO_POSTAL = _t, NRO_SUCURSAL = _t, BASE = _t]),
-				    #"Tipo cambiado" = Table.TransformColumnTypes(Origen,{{"ID_SUCURSAL", Int64.Type}, {"DESC_SUCURSAL", type text}, {"CALLE", type text}, {"NRO_DOMIC", type text}, {"LOCALIDAD", type text}, {"CODIGO_POSTAL", type text}, {"NRO_SUCURSAL", Int64.Type}, {"BASE", type text}}, "en-US")
+				    #"Tipo cambiado" = Table.TransformColumnTypes(Origen,{{"ID_SUCURSAL", Int64.Type}, {"DESC_SUCURSAL", type text}, {"CALLE", type text}, {"NRO_DOMIC", type text}, {"LOCALIDAD", type text}, {"CODIGO_POSTAL", type text}, {"NRO_SUCURSAL", Int64.Type}, {"BASE", type text}}, "en-US"),
+				    #"Replaced Value" = Table.ReplaceValue(#"Tipo cambiado","","Sin asignar",Replacer.ReplaceValue,{"CALLE"}),
+				    #"Replaced Value1" = Table.ReplaceValue(#"Replaced Value","","Sin asignar",Replacer.ReplaceValue,{"NRO_DOMIC"}),
+				    #"Replaced Value2" = Table.ReplaceValue(#"Replaced Value1","","Sin asignar",Replacer.ReplaceValue,{"LOCALIDAD"}),
+				    #"Replaced Value3" = Table.ReplaceValue(#"Replaced Value2","","Sin asignar",Replacer.ReplaceValue,{"CODIGO_POSTAL"})
 				in
-				    #"Tipo cambiado"
+				    #"Replaced Value3"
 
 	annotation PBI_ResultType = Table
 
