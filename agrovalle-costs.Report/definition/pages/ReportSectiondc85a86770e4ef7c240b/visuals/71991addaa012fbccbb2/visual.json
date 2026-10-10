@@ -303,7 +303,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Facturas de Artículos por Fecha'"
+                  "Value": "'Cantidad de Facturas'"
                 }
               }
             },
